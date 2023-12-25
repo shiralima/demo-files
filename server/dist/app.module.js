@@ -10,12 +10,19 @@ exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
+const fileshandler_server_1 = require("@hilma/fileshandler-server");
+const cat_module_1 = require("./cat/cat.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [],
+        imports: [
+            fileshandler_server_1.FilesHandlerModule.register({
+                folder: '../../files-handler',
+            }),
+            cat_module_1.CatModule,
+        ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
     })
