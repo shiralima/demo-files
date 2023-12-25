@@ -1,5 +1,5 @@
 import axios from 'axios'
-import UploadingComponent from './UploadingComponent'
+import { UploadingComponent2 } from './Uploadig2'
 import ToDoComponent from './ToDoComponent'
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <ToDoComponent />
-      <UploadingComponent />
+      {<UploadingComponent2 />}
     </>
   )
 }

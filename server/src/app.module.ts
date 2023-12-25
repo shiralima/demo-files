@@ -1,16 +1,18 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { FilesHandlerModule } from '@hilma/fileshandler-server';
 import { CatModule } from './cat/cat.module';
+import {FilesHandlerModule} from "@hilma/fileshandler-server"
 
 @Module({
-  imports: [
-    FilesHandlerModule.register({
-      folder: '../../files-handler',
-    }),
-    CatModule,
-  ],
+  imports: [CatModule,
+  FilesHandlerModule.register({
+    folder: "../../files-handler",
+    imageSizes: {
+      "small": 50,
+      "large": 100
+    }
+  })],
   controllers: [AppController],
   providers: [AppService],
 })

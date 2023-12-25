@@ -17,7 +17,7 @@ function ToDoComponent() {
                 <li style={{ marginBottom: '10px' }}>1. First install files package</li>
                 <li style={{ marginBottom: '10px' }}>2. Now use basic FileInput component and filesUploader</li>
                 <li style={{ marginBottom: '10px' }}>3. Present the image before send it to server</li>
-                <li style={{ marginBottom: '10px' }}>Advance options: add handel for errors, handel multiple files with MultipleFileInput</li>
+                <li style={{ marginBottom: '10px' }}>Advance options: add handel for errors, handel multiple files with MultipleFileInput, delete file </li>
             </ul>
             <h3>Server side</h3>
             <ul style={{ listStyleType: 'none', padding: 0 }}>
