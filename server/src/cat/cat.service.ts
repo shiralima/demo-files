@@ -12,7 +12,6 @@ export class CatService {
     try {
 
       const path = await this.imageService.saveSingleFile(files);
-      console.log('path: ', path);
       return path;
     } catch (e) {
       console.log('err', e);

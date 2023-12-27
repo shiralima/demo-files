@@ -23,7 +23,7 @@ export function UploadingComponent2() {
     }
 
     const send = async () => {
-        const { data } = await filesUploader.post("/api/cat/upload-image", {}); //todo remove body
+        const { data } = await filesUploader.post("/api/cat/upload-image"); //todo remove body
         setServerPath(data);
         console.log('data: ', data);
     }
@@ -40,7 +40,7 @@ export function UploadingComponent2() {
             <img src={file?.link} />
 
             <button onClick={send}>send</button>
-            {serverPath && <img src={`/api${serverPath}`} />}
+            {serverPath && <img src={`api/${serverPath}`} />}
         </>
     )
 }

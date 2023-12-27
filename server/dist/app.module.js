@@ -17,14 +17,18 @@ let AppModule = class AppModule {
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [cat_module_1.CatModule,
+        imports: [
+            cat_module_1.CatModule,
             fileshandler_server_1.FilesHandlerModule.register({
                 folder: "../../files-handler",
                 imageSizes: {
                     "small": 50,
                     "large": 100
-                }
-            })],
+                },
+                pathPrefix: '/api',
+                autoAllow: true
+            })
+        ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
     })
