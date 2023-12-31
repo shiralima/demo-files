@@ -1,4 +1,4 @@
-function UploadingComponent() {
+export function UploadingComponent() {
 
     return (
         <>
@@ -6,5 +6,3 @@ function UploadingComponent() {
         </>
     )
 }
-
-export default UploadingComponent
