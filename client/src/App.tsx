@@ -1,14 +1,26 @@
-import UploadingComponent from './UploadingComponent'
-import ToDoClientComponent from './ToDoClientComponent'
+import UploadingComponent from './UploadingComponent';
+import ToDoClientComponent from './ToDoClientComponent';
 
 function App() {
+  const containerStyle = {
+    display: 'flex',
+    width: '100%',
+  };
+
+  const halfWidthStyle = {
+    width: '50%',
+  };
 
   return (
-    <>
-      <ToDoClientComponent />
-      <UploadingComponent />
-    </>
-  )
+    <div style={containerStyle}>
+      <div style={halfWidthStyle}>
+        <ToDoClientComponent />
+      </div>
+      <div style={halfWidthStyle}>
+        <UploadingComponent />
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;

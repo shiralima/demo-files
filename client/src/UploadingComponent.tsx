@@ -2,7 +2,7 @@ function UploadingComponent() {
 
     return (
         <>
-            <h1>Upload files</h1>
+            <h1>Upload files here</h1>
         </>
     )
 }
