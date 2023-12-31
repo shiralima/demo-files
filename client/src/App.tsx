@@ -1,4 +1,4 @@
-import { UploadingComponent } from './UploadingComponent';
+import { BasicUploadingComponent } from './BasicUploadingComponent';
 import { ToDoClientComponent } from './ToDoClientComponent';
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
         <ToDoClientComponent />
       </div>
       <div style={halfWidthStyle}>
-        <UploadingComponent />
+        <BasicUploadingComponent />
       </div>
     </div>
   );
