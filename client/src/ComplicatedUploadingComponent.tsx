@@ -3,7 +3,7 @@ import { useState } from "react";
 
 //* This component upload files and handel them only in client side
 
-export function UploadingComponent() {
+export function ComplicatedUploadingComponent() {
 
     const filesUploader = useFiles();
     const [file, setFile] = useState<UploadedFile | null>(null);

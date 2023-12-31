@@ -13,10 +13,13 @@ export function ToDoServerComponent() {
     flexDirection: 'column'
   };
 
+<<<<<<< HEAD
   const headingStyle: CSSProperties = {
     color: 'lightblue'
   };
 
+=======
+>>>>>>> 5dca9d3354556bc96877f31cb25aa9d5c7d1807f
   const listStyle: CSSProperties = {
     listStyleType: 'none',
     padding: 0

@@ -1,7 +1,7 @@
 import { FileInput, UploadError, UploadedFile, useFiles } from "@hilma/fileshandler-client"
 import { useState } from "react";
 
-//* This component upload files to server and handel them in client side
+//* This component is basic upload files to server and handel them in client side
 
 export function UploadingWithServerComponent() {
 

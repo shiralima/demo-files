@@ -8,14 +8,11 @@ export class CatService {
   ) { }
 
   async uploadImage(files: FilesType) {
-    console.log('files: ', files);
     try {
-
       const path = await this.imageService.saveSingleFile(files);
       return path;
-    } catch (e) {
-      console.error('err', e);
-
+    } catch (err) {
+      console.error('err', err);
     }
   }
 }
