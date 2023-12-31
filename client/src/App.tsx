@@ -1,18 +1,26 @@
-import axios from 'axios'
-import { UploadingComponent2 } from './Uploadig2'
-import ToDoComponent from './ToDoComponent'
+import UploadingComponent from './UploadingComponent';
+import ToDoClientComponent from './ToDoClientComponent';
 
 function App() {
+  const containerStyle = {
+    display: 'flex',
+    width: '100%',
+  };
 
-  const fetch = async () => { console.log(await axios.get('/api/hello')) }
+  const halfWidthStyle = {
+    width: '50%',
+  };
 
-  fetch()
   return (
-    <>
-      <ToDoComponent />
-      {<UploadingComponent2 />}
-    </>
-  )
+    <div style={containerStyle}>
+      <div style={halfWidthStyle}>
+        <ToDoClientComponent />
+      </div>
+      <div style={halfWidthStyle}>
+        <UploadingComponent />
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;

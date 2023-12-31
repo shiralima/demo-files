@@ -22,6 +22,8 @@ function UploadingComponent() {
 
     return (
         <>
+            <h1>Upload files here</h1>
+
             <h3>single file:</h3>
             <FileInput
                 filesUploader={filesUploader}
