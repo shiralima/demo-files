@@ -1,16 +1,15 @@
-import { Body, Controller, Post, Req } from '@nestjs/common';
-import { CatService } from './cat.service';
+import { Controller, Post } from '@nestjs/common';
 import { FilesType, UploadedFiles, UseFilesHandler } from '@hilma/fileshandler-server';
+
+import { CatService } from './cat.service';
 
 @Controller('cat')
 export class CatController {
     constructor(private readonly catService: CatService) { }
 
-    @UseFilesHandler(20)//todo check what error
+    @UseFilesHandler()
     @Post('/upload-image')
-    async uploadImage(@UploadedFiles() files: FilesType, @Req() req) {
-        if (req.body.data) console.log('in');
-        console.log('req.body : ', req.body);
+    async uploadImage(@UploadedFiles() files: FilesType) {
         return this.catService.uploadImage(files);
     }
 }

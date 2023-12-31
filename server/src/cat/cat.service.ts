@@ -1,5 +1,5 @@
-import { FilesType, ImageService } from '@hilma/fileshandler-server';
 import { Injectable } from '@nestjs/common';
+import { FilesType, ImageService } from '@hilma/fileshandler-server';
 
 @Injectable()
 export class CatService {
@@ -14,7 +14,7 @@ export class CatService {
       const path = await this.imageService.saveSingleFile(files);
       return path;
     } catch (e) {
-      console.log('err', e);
+      console.error('err', e);
 
     }
   }

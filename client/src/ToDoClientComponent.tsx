@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react';
 
-function ToDoClientComponent() {
+export function ToDoClientComponent() {
   const containerStyle: CSSProperties = {
     display: 'flex',
     justifyContent: 'center',
@@ -47,5 +47,3 @@ function ToDoClientComponent() {
     </div>
   );
 }
-
-export default ToDoClientComponent;

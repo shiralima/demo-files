@@ -1,7 +1,9 @@
 import { FileInput, MultipleFilesInput, UploadError, UploadedFile, useFiles } from "@hilma/fileshandler-client"
 import { useState } from "react";
 
-function UploadingComponent() {
+//* This component upload files and handel them only in client side
+
+export function UploadingComponent() {
 
     const filesUploader = useFiles();
     const [file, setFile] = useState<UploadedFile | null>(null);
@@ -15,8 +17,7 @@ function UploadingComponent() {
     }
 
     const deleteFile = (fileId?: number) => {
-        if (!fileId) return;
-        filesUploader.delete(fileId);
+        filesUploader.delete(fileId!);
         setFile(null);
     }
 
@@ -24,13 +25,14 @@ function UploadingComponent() {
         <>
             <h1>Upload files here</h1>
 
-            <h3>single file:</h3>
+            <h3>Single upload:</h3>
             <FileInput
                 filesUploader={filesUploader}
                 type={'image'}
                 onChange={handleChange}
                 onError={handleError}
             />
+
             <button
                 onClick={() => deleteFile(file?.id)}
             >
@@ -39,14 +41,12 @@ function UploadingComponent() {
             <img src={file?.link} />
 
             <h3>
-                multiple files:
+                Multiple upload:
             </h3>
             <MultipleFilesInput
-                type={["file", "image"]}
+                type={"file"}
                 filesUploader={filesUploader}
             />
         </>
     )
 }
-
-export default UploadingComponent

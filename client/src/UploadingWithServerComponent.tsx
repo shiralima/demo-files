@@ -1,45 +1,44 @@
 import { FileInput, UploadError, UploadedFile, useFiles } from "@hilma/fileshandler-client"
 import { useState } from "react";
 
-export function UploadingComponent2() {
+//* This component upload files to server and handel them in client side
+
+export function UploadingWithServerComponent() {
+
+    const [serverPath, setServerPath] = useState<string>("");
+    const [file, setFile] = useState<UploadedFile | null>(null);
 
     const filesUploader = useFiles();
-    const [file, setFile] = useState<UploadedFile | null>(null);
-    const [serverPath, setServerPath] = useState<string>("");
 
     const handleChange = (value: UploadedFile) => {
         setFile(value);
-        console.log('value: ', value);
     }
 
     const handleError = (err: UploadError) => {
-        console.log('err: ', err);
-    }
-
-    const deleteFile = (fileId?: number) => {
-        console.log('fileId: ', fileId);
-        filesUploader.delete(fileId!);
-        setFile(null);
+        alert("error:" + err);
     }
 
     const send = async () => {
-        const { data } = await filesUploader.post("/api/cat/upload-image"); //todo remove body
-        setServerPath(data);
-        console.log('data: ', data);
+        try {
+            const { data } = await filesUploader.post("/api/cat/upload-image");
+            setServerPath(data);
+        } catch (err) {
+            console.error("Server error while upload file:", err);
+        }
     }
 
     return (
         <>
             <FileInput
-                type={["image", "file"]}
+                type={"image"}
                 filesUploader={filesUploader}
                 onChange={handleChange}
                 onError={handleError}
             />
-            <button onClick={() => { deleteFile(file?.id) }}>delete</button>
             <img src={file?.link} />
 
             <button onClick={send}>send</button>
+
             {serverPath && <img src={`api/${serverPath}`} />}
         </>
     )

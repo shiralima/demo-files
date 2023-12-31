@@ -1,5 +1,5 @@
-import UploadingComponent from './UploadingComponent';
-import ToDoClientComponent from './ToDoClientComponent';
+import { UploadingComponent } from './UploadingComponent';
+import { ToDoClientComponent } from './ToDoClientComponent';
 
 function App() {
   const containerStyle = {
